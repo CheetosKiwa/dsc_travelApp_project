@@ -147,6 +147,7 @@ void deleteTrip() {
       id = trips[i].getId();
       if (deleteTripID == id) {
         trips.removeAt(i);
+        passengerList.removeAt(i);
         runApp();
       }
     }

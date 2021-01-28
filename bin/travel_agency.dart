@@ -6,7 +6,7 @@ void main(List<String> arguments) {
 }
 
 var trips = <Trip>[];
-List<int> passengerList = List(trips.length);
+List passengerList = [];
 
 void runApp() {
   print('1 : Add Trip \n'
@@ -72,6 +72,7 @@ void addTrip() {
   date = dateInputHelper(date);
 
   trips.add(Trip(id, passengerLimit, location, price, date));
+  passengerList.add(0);
   print('Done !!\n');
   runApp();
 }
@@ -190,7 +191,6 @@ void searchTrip() {
 void reverse() {
   showTrips();
   checkEmptyTrips();
-  passengerList.fillRange(0,passengerList.length,0);
   var reverseTrip, tripID, passengerLimit, id, check;
 
   print('Select Trip By ID');
@@ -207,9 +207,8 @@ void reverse() {
     print('Not Found !! \n');
     runApp();
   }
-
   if (passengerLimit > passengerList[id]) {
-    passengerList[id]++;
+    passengerList[id] ++;
     print('trip reversed');
     print(
         'passenger = ${passengerList[id]} and passenger limit = $passengerLimit');
